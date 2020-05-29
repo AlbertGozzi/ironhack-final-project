@@ -207,7 +207,7 @@ const ChartEditor = () => {
         let file = info.file.originFileObj;
         const fileReader = new FileReader();
         fileReader.onload = event => {
-          try {
+          // try {
             console.log(`trying`)
             const { result } = event.target;
             const wb = XLSX.read(result, { type: "binary" });
@@ -226,10 +226,10 @@ const ChartEditor = () => {
   
             message.success("Upload success!");
   
-          } catch (e) {
-            console.log(e);
-            message.error("File type is incorrect!");
-          }
+          // } catch (e) {
+            // console.log(e);
+            // message.error("File type is incorrect!");
+          // }
         };
         fileReader.readAsBinaryString(file);
       }
